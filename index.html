@@ -10,23 +10,32 @@
 </head>
 
 <body>
-    <div class="notch">
-        <div class="camera"></div>
-        <div class="speaker"></div>
-    </div>
-    <nav class="winButtons">
-        <ul>
-            <li id="minimize">_</li>
-            <li id="close">X</li>
-        </ul>
-    </nav>
-    <div id="sketch-holder">
-        <!--ide jön a canvas-->
+    <div class="game">
+        <div class="notch">
+            <div class="camera"></div>
+            <div class="speaker"></div>
+        </div>
+        <nav class="winButtons">
+            <ul>
+                <li id="minimize">_</li>
+                <li id="close">X</li>
+            </ul>
+        </nav>
+        <button id="reset">RESET</button>
+        <button id="start" onclick="startFlappy()">START</button>
+        <h1 id="message">PRESS ENTER TO START</h1>
+        <h1 id="countdown"></h1>
+        <div id="sketch-holder">
+            <!--ide jön a canvas-->
+            <div id="points">
+                <p id="score">Score: 0</p>
+            </div>
+        </div>
     </div>
 </body>
 
 
-<script src="./assets/js/windowbuttons.js"></script>
+<script src="./assets/js/buttons.js"></script>
 <script src="./lib/p5.min.js"></script>
 <script src="./gameCode/bird.js"></script>
 <script src="./gameCode/pipes.js"></script>

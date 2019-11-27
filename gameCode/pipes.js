@@ -1,10 +1,10 @@
 function Pipe() {
-	this.spacing = 175;
+	this.spacing = 200;
 	this.top = random(height / 6, 3 / 4 * height);
 	this.bottom = height - (this.top + this.spacing);
 	this.x = width;
 	this.w = 80;
-	this.speed = 6;
+	this.speed = 5;
 
 	this.highlight = false;
 
@@ -16,6 +16,13 @@ function Pipe() {
 			}
 		}
 		this.highlight = false;
+		return false;
+	};
+
+	this.passes = function(bird) {
+		if (bird.y > this.top || bird.y < height + this.bottom) {
+			return true;
+		}
 		return false;
 	};
 
