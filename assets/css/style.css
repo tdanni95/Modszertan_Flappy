@@ -1,0 +1,57 @@
+html {
+	font-family: 'Chilanka';
+	background: url('../../resources/images/background.jpg') no-repeat center center fixed;
+	background-size: cover;
+}
+
+body,
+html {
+	margin: 0;
+	padding: 0;
+}
+
+.winButtons {
+	top: 0;
+	right: 0;
+	position: absolute;
+	z-index: 1;
+}
+
+.winButtons ul li {
+	float: left;
+	list-style: none;
+	padding: 10px 25px;
+	color: #f4f4ff;
+	font-size: 25px;
+	transition: 100ms all;
+}
+.winButtons ul li:hover {
+	background: rgba(255, 255, 255, 0.2);
+	cursor: pointer;
+}
+
+.notch {
+	margin: 0 auto;
+	width: 30%;
+	background-color: black;
+	height: 50px;
+	border-bottom-right-radius: 25px;
+	border-bottom-left-radius: 25px;
+	position: relative;
+	z-index: 1;
+}
+
+.camera {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	content: url("../../resources/images/camera-lens.png");
+	position: absolute;
+	top: 10px;
+	right: 20px;
+}
+
+#sketch-holder {
+	position: absolute;
+	top: 0;
+}
