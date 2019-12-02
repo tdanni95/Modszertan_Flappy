@@ -15,9 +15,6 @@ function setup() {
 	cnv.position(0, 0);
 	cnv.parent('sketch-holder');
 	bird = new Bird();
-	if (mode == 1) {
-		pipes.push(new Pipe());
-	}
 }
 
 function draw() {
@@ -27,7 +24,6 @@ function draw() {
 			if (pipes.length > 2) {
 				pipes[i] = null;
 			}
-			console.log(pipes.length);
 			pipes[i].show();
 			pipes[i].update();
 
