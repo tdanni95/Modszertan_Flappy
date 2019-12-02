@@ -12,7 +12,11 @@ function Bird() {
 	};
 
 	this.up = function() {
+<<<<<<< HEAD
 		this.velocity = -12;
+=======
+		this.velocity = this.lift;
+>>>>>>> 579ed2f87a823afb5981f35ab5030bbb4591a12b
 	};
 
 	this.update = function() {
