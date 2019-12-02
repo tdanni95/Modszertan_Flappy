@@ -6,7 +6,7 @@ var points = 0;
 var score = document.getElementById('score');
 var cd = document.getElementById('countdown');
 var msg = document.getElementById('message');
-var felirat = document.querySelector('#points')
+var felirat = document.querySelector('#points');
 msg.style.display = 'block';
 
 start.style.display = 'none';
@@ -16,23 +16,16 @@ function setup() {
 	cnv.position(0, 0);
 	cnv.parent('sketch-holder');
 	bird = new Bird();
-
-	
-	if (mode == 1) {
-		pipes.push(new Pipe());
-	}
-
 }
 
 function draw() {
 	if (mode == 1) {
 		clear();
-		felirat.style.visibility = "visible";
+		felirat.style.visibility = 'visible';
 		for (var i = pipes.length - 1; i >= 0; i--) {
 			if (pipes.length > 2) {
 				pipes[i] = null;
 			}
-			console.log(pipes.length);
 			pipes[i].show();
 			pipes[i].update();
 
@@ -41,10 +34,8 @@ function draw() {
 				while (pipes.length > 0) {
 					pipes.pop();
 				}
-				felirat.style.color = "tomato";
+				felirat.style.color = 'tomato';
 				noLoop();
-				
-				
 			}
 			if (bird.x - 80 == pipes[i].x && pipes[i].passes(bird)) {
 				points++;
@@ -53,7 +44,7 @@ function draw() {
 			if (pipes[i].offscreen()) {
 				pipes.splice(i, 1);
 			}
-			
+
 			score.innerHTML = points;
 		}
 
