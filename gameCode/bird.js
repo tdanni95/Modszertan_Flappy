@@ -1,14 +1,15 @@
-function Bird() {
+function Bird(img) {
+	this.img;
 	this.y = height / 2;
 	this.x = 65;
 
 	this.gravity = 0.7;
 	this.lift = -12;
 	this.velocity = 0;
-
 	this.show = function() {
-		fill(255);
-		ellipse(this.x, this.y, 32, 32);
+		image(img, this.x, this.y, 40, 40);
+		/* 		fill(255);
+		ellipse(this.x, this.y, 32, 32); */
 	};
 
 	this.up = function() {
@@ -21,13 +22,13 @@ function Bird() {
 		this.y += this.velocity;
 
 		if (this.y > height) {
-			this.y = height -16;
+			this.y = height - 40;
 			this.velocity = 0;
-			this.gravity = 0
+			this.gravity = 0;
 		}
 
 		if (this.y < 0) {
-			this.y = 16;
+			this.y = 0;
 			this.velocity = 0;
 		}
 	};

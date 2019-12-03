@@ -8,6 +8,8 @@ var cd = document.getElementById('countdown');
 var msg = document.getElementById('message');
 var felirat = document.querySelector('#points');
 msg.style.display = 'block';
+var imgBird;
+var imgPipe;
 
 start.style.display = 'none';
 function setup() {
@@ -15,10 +17,13 @@ function setup() {
 	let cnv = createCanvas(windowWidth, windowHeight);
 	cnv.position(0, 0);
 	cnv.parent('sketch-holder');
-	bird = new Bird();
+	imgBird = loadImage('./gameCode/bird.png');
+	imgPipe = loadImage('./gameCode/pipe.png');
+	bird = new Bird(imgBird);
 }
 
 function draw() {
+	//image(img, 0, 0, 30, 30);
 	if (mode == 1) {
 		clear();
 		felirat.style.visibility = 'visible';
@@ -37,7 +42,7 @@ function draw() {
 				felirat.style.color = 'tomato';
 				noLoop();
 			}
-			if (bird.x - 80 == pipes[i].x && pipes[i].passes(bird)) {
+			if (bird.x == pipes[i].x && pipes[i].passes(bird)) {
 				points++;
 			}
 
@@ -52,7 +57,7 @@ function draw() {
 		bird.show();
 
 		if (frameCount % 90 == 0) {
-			pipes.push(new Pipe());
+			pipes.push(new Pipe(imgPipe));
 		}
 	}
 }

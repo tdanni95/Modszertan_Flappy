@@ -1,4 +1,4 @@
-function Pipe() {
+function Pipe(img) {
 	this.spacing = 200;
 	this.top = random(height / 6, 3 / 4 * height);
 	this.bottom = height - (this.top + this.spacing);
@@ -23,9 +23,11 @@ function Pipe() {
 	};
 
 	this.show = function() {
-		fill(255);
-		rect(this.x, 0, this.w, this.top);
-		rect(this.x, height - this.bottom, this.w, this.bottom);
+		//fill(255);
+		image(img, this.x, 0, this.w, this.top);
+		image(img, this.x, height - this.bottom, this.w, this.bottom);
+		/* rect(this.x, 0, this.w, this.top);
+		rect(this.x, height - this.bottom, this.w, this.bottom); */
 	};
 
 	this.update = function() {

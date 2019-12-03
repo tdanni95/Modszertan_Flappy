@@ -8,7 +8,7 @@ function createWindow() {
 		resizable: false,
 		frame: false,
 		transparent: true,
-		
+
 		webPreferences: {
 			nodeIntegration: true
 		}
